@@ -1,14 +1,45 @@
 <html>
-    <head>
-        <title>Pol te quiero decir algo</title>
-    </head>
-    <body>
-        <button onclick="showPol()">Haz click para recibir amor</button>
-        <img id="imageText" src="image.png" style="display:none"/>
-        <script>
-            function showPol() {
-                document.getElementById('imageText').style.display = "block";
-            }
-        </script>
-    </body>
+
+<head>
+    <title>Calculadora Pol</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <script>
+        var calculator = new Calculator(0,0);
+    </script>
+    <p id="ans">0</p>
+    <p id="current-operator"><br></p>
+
+    <button class="operator-button" id="but_erase" onclick="calculator.deleteAll()">C</button>
+    <label id="result">0</label>
+    <br>
+    <button class="number-button" id="but_7" onclick="calculator.appendNumber(7)">7</button>
+    <button class="number-button" id="but_8" onclick="calculator.appendNumber(8)">8</button>
+    <button class="number-button" id="but_9" onclick="calculator.appendNumber(9)">9</button>
+    <button class="operator-button" id="but_divide" onclick="calculator.operate('/')">/</button>
+    <br>
+    <button class="number-button" id="but_4" onclick="calculator.appendNumber(4)">4</button>
+    <button class="number-button" id="but_5" onclick="calculator.appendNumber(5)">5</button>
+    <button class="number-button" id="but_6" onclick="calculator.appendNumber(6)">6</button>
+    <button class="operator-button" id="but_times" onclick="calculator.operate('x')">x</button>
+    <br>
+    <button class="number-button" id="but_1" onclick="calculator.appendNumber(1)">1</button>
+    <button class="number-button" id="but_2" onclick="calculator.appendNumber(2)">2</button>
+    <button class="number-button" id="but_3" onclick="calculator.appendNumber(3)">3</button>
+    <button class="operator-button" id="but_minus" onclick="calculator.operate('-')">-</button>
+    <br>
+    <button class="number-button" id="but_comma" onclick="calculator.calculate(this)">,</button>
+    <button class="number-button" id="but_0" onclick="calculator.appendNumber(0)">0</button>
+    <button class="operator-button" id="but_equal" onclick="calculator.calculate()">=</button>
+    <button class="operator-button" id="but_plus" onclick="calculator.operate('+')">+</button>
+    <br>
+    <button onclick="calculator.showPol()">Haz click para recibir amor</button>
+    <br>
+
+    <img id="imageText" src="image.png" style="display:none" />
+</body>
+
 </html>
